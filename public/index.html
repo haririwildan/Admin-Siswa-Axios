@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Axios JSON</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>Aplikasi Pendataan Siswa</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, possimus. Veritatis, natus. Iusto, maiores
+        natus facilis, iure nulla eos magni a saepe placeat voluptatibus molestias, cumque nemo commodi perspiciatis
+        enim?</p>
+
+    <div>
+        <div class="form-display">
+            <div class="form">
+                <label for="">Nama</label>
+                <input type="text" id="name" placeholder="Tulis nama lengkap disini">
+            </div>
+            <div class="form">
+                <label for="">kelas</label>
+                <input type="text" id="class" placeholder="Tulis kelas disini">
+            </div>
+            <div class="form">
+                <label for="">Jurusan</label>
+                <select id="major">
+                    <option value="">Pilih</option>
+                    <option value="Teknik Instalasi Tenaga Listrik">Teknik Instalasi Tenaga Listrik</option>
+                    <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                    <option value="Teknik Kendaraan Ringan">Teknik Kendaraan Ringan</option>
+                    <option value="Audio Video">Audio Video</option>
+                </select>
+            </div>
+            <button id="button" class="btn-simpan" onclick="handleSaveClick()" disabled>Simpan</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Lengkap</th>
+                    <th>Kelas</th>
+                    <th>Jurusan</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="result"></tbody>
+        </table>
+    </div>
+
+    <!-- Modal Simpan -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeConfirmModal()">&times;</span>
+            <p>Apakah data sudah benar?</p>
+            <button class="btn-ya" id="confirmButton" onclick="confirmSave()">Ya</button>
+            <button class="btn-tidak" onclick="closeConfirmModal()">Tidak</button>
+        </div>
+    </div>
+
+    <!-- Modal Edit -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeEditModal()">&times;</span>
+            <p>Apakah Anda yakin ingin mengedit data ini?</p>
+            <button class="btn-ya" onclick="confirmEdit()">Ya</button>
+            <button class="btn-tidak" onclick="closeEditModal()">Tidak</button>
+        </div>
+    </div>
+
+
+    <!-- Modal Delete -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeDeleteModal()">&times;</span>
+            <p>Apakah Anda yakin ingin menghapus data ini?</p>
+            <button class="btn-ya" onclick="confirmDelete()">Ya</button>
+            <button class="btn-tidak" onclick="closeDeleteModal()">Tidak</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/main.js"></script>
+</body>
+
+</html>
